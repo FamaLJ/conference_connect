@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-get "/", :controller => "breakoutsessions", :action => "home"
 
   # Routes for the Breakoutsession resource:
   # CREATE
