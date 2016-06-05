@@ -14,11 +14,11 @@ class EnrollmentsController < ApplicationController
   def create
     @enrollment = Enrollment.new
     @enrollment.other = params[:other]
-    @enrollment.industry_interest = params[:industry_interest]
-    @enrollment.job_opportunities = params[:job_opportunities]
-    @enrollment.speaker_connection = params[:speaker_connection]
-    @enrollment.user_id = params[:user_id]
-    @enrollment.breakout_session_id = params[:breakout_session_id]
+    @enrollment.industry = params[:industry]
+    @enrollment.job = params[:job]
+    @enrollment.content = params[:content]
+    @enrollment.userenroll_id = params[:userenroll_id]
+    @enrollment.breakoutenroll_id = params[:breakoutenroll_id]
 
     if @enrollment.save
       redirect_to "/enrollments", :notice => "Enrollment created successfully."
@@ -35,11 +35,11 @@ class EnrollmentsController < ApplicationController
     @enrollment = Enrollment.find(params[:id])
 
     @enrollment.other = params[:other]
-    @enrollment.industry_interest = params[:industry_interest]
-    @enrollment.job_opportunities = params[:job_opportunities]
-    @enrollment.speaker_connection = params[:speaker_connection]
-    @enrollment.user_id = params[:user_id]
-    @enrollment.breakout_session_id = params[:breakout_session_id]
+    @enrollment.industry = params[:industry]
+    @enrollment.job = params[:job]
+    @enrollment.content = params[:content]
+    @enrollment.userenroll_id = params[:userenroll_id]
+    @enrollment.breakoutenroll_id = params[:breakoutenroll_id]
 
     if @enrollment.save
       redirect_to "/enrollments", :notice => "Enrollment updated successfully."

@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
-get "/", :controller => "breakout_sessions", :action => "index"
 
+get "/", :controller => "breakoutsessions", :action => "index"
 
-  # Routes for the Breakout_session resource:
+  # Routes for the Breakoutsession resource:
   # CREATE
-  get "/breakout_sessions/new", :controller => "breakout_sessions", :action => "new"
-  post "/create_breakout_session", :controller => "breakout_sessions", :action => "create"
+  get "/breakoutsessions/new", :controller => "breakoutsessions", :action => "new"
+  post "/create_breakoutsession", :controller => "breakoutsessions", :action => "create"
 
   # READ
-  get "/breakout_sessions", :controller => "breakout_sessions", :action => "index"
-  get "/breakout_sessions/:id", :controller => "breakout_sessions", :action => "show"
+  get "/breakoutsessions", :controller => "breakoutsessions", :action => "index"
+  get "/breakoutsessions/:id", :controller => "breakoutsessions", :action => "show"
 
   # UPDATE
-  get "/breakout_sessions/:id/edit", :controller => "breakout_sessions", :action => "edit"
-  post "/update_breakout_session/:id", :controller => "breakout_sessions", :action => "update"
+  get "/breakoutsessions/:id/edit", :controller => "breakoutsessions", :action => "edit"
+  post "/update_breakoutsession/:id", :controller => "breakoutsessions", :action => "update"
 
   # DELETE
-  get "/delete_breakout_session/:id", :controller => "breakout_sessions", :action => "destroy"
+  get "/delete_breakoutsession/:id", :controller => "breakoutsessions", :action => "destroy"
   #------------------------------
 
   # Routes for the Enrollment resource:
@@ -36,6 +36,7 @@ get "/", :controller => "breakout_sessions", :action => "index"
   get "/delete_enrollment/:id", :controller => "enrollments", :action => "destroy"
   #------------------------------
 
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -26,46 +26,46 @@
         </label>
       </div>
 
-      <!-- Label and input for industry_interest -->
+      <!-- Label and input for industry -->
       <div class="checkbox">
-        <label for="industry_interest">
-          <input type="checkbox" id="industry_interest" name="industry_interest" value="1" <%= "checked" if @enrollment.industry_interest %>>
-          Industry interest
+        <label for="industry">
+          <input type="checkbox" id="industry" name="industry" value="1" <%= "checked" if @enrollment.industry %>>
+          Industry
         </label>
       </div>
 
-      <!-- Label and input for job_opportunities -->
+      <!-- Label and input for job -->
       <div class="checkbox">
-        <label for="job_opportunities">
-          <input type="checkbox" id="job_opportunities" name="job_opportunities" value="1" <%= "checked" if @enrollment.job_opportunities %>>
-          Job opportunities
+        <label for="job">
+          <input type="checkbox" id="job" name="job" value="1" <%= "checked" if @enrollment.job %>>
+          Job
         </label>
       </div>
 
-      <!-- Label and input for speaker_connection -->
+      <!-- Label and input for content -->
       <div class="checkbox">
-        <label for="speaker_connection">
-          <input type="checkbox" id="speaker_connection" name="speaker_connection" value="1" <%= "checked" if @enrollment.speaker_connection %>>
-          Speaker connection
+        <label for="content">
+          <input type="checkbox" id="content" name="content" value="1" <%= "checked" if @enrollment.content %>>
+          Content
         </label>
       </div>
 
-      <!-- Label and input for user_id -->
+      <!-- Label and input for userenroll_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
+        <label for="userenroll_id" class="control-label">
+          Userenroll
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @enrollment.user_id %>">
+        <input type="text" id="userenroll_id" name="userenroll_id" placeholder="Userenroll" class="form-control" value="<%= @enrollment.userenroll_id %>">
       </div>
 
-      <!-- Label and input for breakout_session_id -->
+      <!-- Label and input for breakoutenroll_id -->
       <div class="form-group">
-        <label for="breakout_session_id" class="control-label">
-          Breakout session
+        <label for="breakoutenroll_id" class="control-label">
+          Breakoutenroll
         </label>
 
-        <input type="text" id="breakout_session_id" name="breakout_session_id" placeholder="Breakout session" class="form-control" value="<%= @enrollment.breakout_session_id %>">
+        <input type="text" id="breakoutenroll_id" name="breakoutenroll_id" placeholder="Breakoutenroll" class="form-control" value="<%= @enrollment.breakoutenroll_id %>">
       </div>
 
       <button class="btn btn-warning">
