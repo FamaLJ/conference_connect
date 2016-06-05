@@ -15,6 +15,30 @@
   padding-top: 150px;
 }
 
+.sponsor {
+  font-size: 50px;
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+  color: grey;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.sponsort {
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+  color: grey;
+  height: 60px;
+  padding-top: 20px;
+}
+
+.about {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
 .sound-bites, .why-order {
   background-color: rgb(238, 238, 238);
 }
@@ -28,7 +52,7 @@
 }
 
 footer {
-  background-color: rgb(50, 50, 170);
+  background-color: rgb(142, 142, 142);
 }
 
 .blue {
@@ -83,6 +107,10 @@ footer li {
 
 .padding-inside-top-xl {
   padding-top: 200px;
+}
+
+.padding-inside-top-super {
+  padding-top: 300px;
 }
 
 .padding-inside-bottom-xs {
