@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Enrollment #<%= @enrollment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Other</dt>
+      <dd><%= @enrollment.other %></dd>
+
+      <dt>Industry</dt>
+      <dd><%= @enrollment.industry %></dd>
+
+      <dt>Job</dt>
+      <dd><%= @enrollment.job %></dd>
+
+      <dt>Content</dt>
+      <dd><%= @enrollment.content %></dd>
+
+      <dt>Userenroll</dt>
+      <dd><%= @enrollment.userenroll_id %></dd>
+
+      <dt>Breakoutenroll</dt>
+      <dd><%= @enrollment.breakoutenroll_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/enrollments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/enrollments/<%= @enrollment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_enrollment/<%= @enrollment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h3>Breakoutsession #<%= @breakoutsession.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Breakoutname</dt>
+      <dd><%= @breakoutsession.breakoutname %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @breakoutsession.description %></dd>
+
+      <dt>Starts at</dt>
+      <dd><%= @breakoutsession.starts_at %></dd>
+
+      <dt>Ends at</dt>
+      <dd><%= @breakoutsession.ends_at %></dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+
+      <dt>Speaker</dt>
+      <dd><%= @breakoutsession.speaker %></dd>
+
+      <dt> </dt>
+      <dd> </dd>
+
+      <dt></dt>
+      <dd><img src="<%= @breakoutsession.image_url %>" alt="" width="500" </dd>
+
+      <dt>Biographyo</dt>
+      <dd><%= @breakoutsession.speakerbio %></dd>
+
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/breakoutsessions" class="btn btn-primary">
+        Back
+      </a>
+      <!-- <a href="/breakoutsessions/<%= @breakoutsession.id %>/edit" class="btn btn-warning">
+        Edit
+      </a> -->
+      <!-- <a href="/delete_breakoutsession/<%= @breakoutsession.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a> -->
+    </div>
+  </div>
+</div>
