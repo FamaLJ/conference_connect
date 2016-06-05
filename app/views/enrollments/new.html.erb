@@ -1,0 +1,78 @@
+<!-- Validation failure messages -->
+<% if @enrollment.errors.any? %>
+  <% @enrollment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Enrollment</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_enrollment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for other -->
+      <div class="checkbox">
+        <label for="other">
+          <input type="checkbox" id="other" name="other" value="1" <%= "checked" if @enrollment.other %>>
+          Other
+        </label>
+      </div>
+
+      <!-- Label and input for industry_interest -->
+      <div class="checkbox">
+        <label for="industry_interest">
+          <input type="checkbox" id="industry_interest" name="industry_interest" value="1" <%= "checked" if @enrollment.industry_interest %>>
+          Industry interest
+        </label>
+      </div>
+
+      <!-- Label and input for job_opportunities -->
+      <div class="checkbox">
+        <label for="job_opportunities">
+          <input type="checkbox" id="job_opportunities" name="job_opportunities" value="1" <%= "checked" if @enrollment.job_opportunities %>>
+          Job opportunities
+        </label>
+      </div>
+
+      <!-- Label and input for speaker_connection -->
+      <div class="checkbox">
+        <label for="speaker_connection">
+          <input type="checkbox" id="speaker_connection" name="speaker_connection" value="1" <%= "checked" if @enrollment.speaker_connection %>>
+          Speaker connection
+        </label>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @enrollment.user_id %>">
+      </div>
+
+      <!-- Label and input for breakout_session_id -->
+      <div class="form-group">
+        <label for="breakout_session_id" class="control-label">
+          Breakout session
+        </label>
+
+        <input type="text" id="breakout_session_id" name="breakout_session_id" placeholder="Breakout session" class="form-control" value="<%= @enrollment.breakout_session_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Enrollment
+      </button>
+      or
+      <a href="/enrollments">Cancel</a>
+    </form>
+  </div>
+</div>

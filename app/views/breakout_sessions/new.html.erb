@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @breakout_session.errors.any? %>
+<% @breakout_session.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Breakout Session</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_breakout_session" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for breakout_session_name -->
+      <div class="form-group">
+        <label for="breakout_session_name" class="control-label">
+          Breakout session name
+        </label>
+
+        <textarea id="breakout_session_name" name="breakout_session_name" placeholder="Breakout session name" class="form-control" rows="3"><%= @breakout_session.breakout_session_name %></textarea>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @breakout_session.description %></textarea>
+      </div>
+
+      <!-- Label and input for speaker -->
+      <div class="form-group">
+        <label for="speaker" class="control-label">
+          Speaker
+        </label>
+
+        <input type="text" id="speaker" name="speaker" placeholder="Speaker" class="form-control" value="<%= @breakout_session.speaker %>">
+      </div>
+      
+      <!-- Label and input for starts_at -->
+      <div class="form-group">
+        <label for="starts_at" class="control-label">
+          Starts at
+        </label>
+
+        <input type="text" id="starts_at" name="starts_at" placeholder="Starts at" class="form-control" value="<%= @breakout_session.starts_at %>">
+      </div>
+
+      <!-- Label and input for ends_at -->
+      <div class="form-group">
+        <label for="ends_at" class="control-label">
+          Ends at
+        </label>
+
+        <input type="text" id="ends_at" name="ends_at" placeholder="Ends at" class="form-control" value="<%= @breakout_session.ends_at %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Breakout Session
+      </button>
+      or
+      <a href="/breakout_sessions">Cancel</a>
+    </form>
+  </div>
+</div>
