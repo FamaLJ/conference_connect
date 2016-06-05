@@ -1,42 +1,4 @@
 Rails.application.routes.draw do
-
-get "/", :controller => "breakoutsessions", :action => "index"
-
-  # Routes for the Breakoutsession resource:
-  # CREATE
-  get "/breakoutsessions/new", :controller => "breakoutsessions", :action => "new"
-  post "/create_breakoutsession", :controller => "breakoutsessions", :action => "create"
-
-  # READ
-  get "/breakoutsessions", :controller => "breakoutsessions", :action => "index"
-  get "/breakoutsessions/:id", :controller => "breakoutsessions", :action => "show"
-
-  # UPDATE
-  get "/breakoutsessions/:id/edit", :controller => "breakoutsessions", :action => "edit"
-  post "/update_breakoutsession/:id", :controller => "breakoutsessions", :action => "update"
-
-  # DELETE
-  get "/delete_breakoutsession/:id", :controller => "breakoutsessions", :action => "destroy"
-  #------------------------------
-
-  # Routes for the Enrollment resource:
-  # CREATE
-  get "/enrollments/new", :controller => "enrollments", :action => "new"
-  post "/create_enrollment", :controller => "enrollments", :action => "create"
-
-  # READ
-  get "/enrollments", :controller => "enrollments", :action => "index"
-  get "/enrollments/:id", :controller => "enrollments", :action => "show"
-
-  # UPDATE
-  get "/enrollments/:id/edit", :controller => "enrollments", :action => "edit"
-  post "/update_enrollment/:id", :controller => "enrollments", :action => "update"
-
-  # DELETE
-  get "/delete_enrollment/:id", :controller => "enrollments", :action => "destroy"
-  #------------------------------
-
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
