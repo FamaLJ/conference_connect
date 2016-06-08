@@ -6,7 +6,10 @@
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css">
    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-   
+   <!-- Connect to our own additional CSS -->
+   <link rel="stylesheet" href="assets/additional_styles.css">
+ </head>
+
 
   <style>
     /* Only necessary if you are using navbar-fixed-top */
@@ -44,6 +47,7 @@
          <ul class="nav navbar-nav">
            <li><a href="/breakoutsessions">Breakout Sessions</a></li>
            <li><a href="/enrollments">Enrollments</a></li>
+           <li><a href="/enrollments">Register</a></li>
                  </ul>
 
          <ul class="nav navbar-nav navbar-right">
@@ -71,6 +75,49 @@
     <% end %>
 
     <%= yield %>
+  </div>
+
+
+  <div>
+    <footer class="footer container-fluid padding-inside-top-sm padding-inside-bottom-md margin-above-top-super" class=blue>
+      <div class="row">
+
+
+        <div class="col-sm-3 col-sm-offset-1 padding-inside-top-sm">
+          <h3>About ConferenceNet</h3>
+          <p class="padding-inside-bottom-sm">Helping you cast a wider net to build your network!</p>
+          <div> </div>
+          <ul class="list-unstyled">
+            <li>Our Mission</li>
+            <li>Our Blog</li>
+            <li>Follow us on Twitter</li>
+            <li>Past Conferences</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+
+        <div class="col-sm-4">
+          <h4></h4>
+        </div>
+
+
+        <div class="col-sm-3 padding-inside-top-md">
+          <h4>Sign up to hear about more conferences:</h4>
+
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="sr-only">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary btn-block">Help me cast my net!</button>
+          </form>
+        </div>
+
+      </div>
+
+    </footer>
   </div>
 </body>
 </html>
