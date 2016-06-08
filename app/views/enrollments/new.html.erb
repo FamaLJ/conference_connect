@@ -31,10 +31,10 @@
       <!-- Label and input for breakoutenroll_id -->
       <div class="form-group">
         <label for="breakoutenroll_id" class="control-label">
-          Breakoutenroll
+          Choose Breakout Session
         </label>
 
-        <input type="text" id="breakoutenroll_id" name="breakoutenroll_id" placeholder="Breakoutenroll" class="form-control" value="<%= @enrollment.breakoutenroll_id %>">
+        <%= select_tag(:breakoutenroll_id, options_from_collection_for_select(Breakoutsession.all, :id, :breakoutname, @enrollment.breakoutenroll_id), :class =>"form-control") %>
       </div>
 
 
