@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Add Enrollment</h3>
+  <h3>Register for a Breakout Session</h3>
 </div>
 
 <div class="row">
@@ -22,10 +22,10 @@
           <!-- Label and input for userenroll_id -->
       <div class="form-group">
         <label for="userenroll_id" class="control-label">
-          Userenroll
+
         </label>
 
-        <input type="text" id="userenroll_id" name="userenroll_id" placeholder="Userenroll" class="form-control" value="<%= @enrollment.userenroll_id %>">
+        <input type="hidden" id="userenroll_id" name="userenroll_id" placeholder="Userenroll" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for breakoutenroll_id -->
