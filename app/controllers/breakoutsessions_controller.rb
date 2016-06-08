@@ -1,4 +1,5 @@
 class BreakoutsessionsController < ApplicationController
+    before_action :authenticate_user!
   def index
     @breakoutsessions = Breakoutsession.all
   end

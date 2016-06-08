@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get "/publicagendas", :controller => "publicagendas", :action => "index"
   get "/publicagendas", :controller => "publicagendas", :action => "show"
 
+
+  # VIEW HOME PAGE
+  get "/home", :controller => "home", :action => "index"
+  get "/home", :controller => "home", :action => "show"
+
   #----------
 
   # Routes for the Breakoutsession resource:
