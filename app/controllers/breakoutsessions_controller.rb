@@ -3,6 +3,10 @@ class BreakoutsessionsController < ApplicationController
     @breakoutsessions = Breakoutsession.all
   end
 
+  def agenda
+    @breakoutsession = Breakoutsession.find(params[:id])
+  end
+
   def show
     @breakoutsession = Breakoutsession.find(params[:id])
   end
