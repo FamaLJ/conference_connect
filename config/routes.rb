@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  # VIEW AGENDA
+  get "/public/publicagenda", :controller => "public", :action => "publicagenda"
+  #----------
+
   # Routes for the Breakoutsession resource:
   # CREATE
   get "/breakoutsessions/new", :controller => "breakoutsessions", :action => "new"
@@ -18,9 +22,7 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_breakoutsession/:id", :controller => "breakoutsessions", :action => "destroy"
 
-  # VIEW AGENDA
-  get "/breakoutsessions/agenda", :controller => "breakoutsessions", :action => "agenda"
-  #------------------------------
+--------------------
 
   # Routes for the Enrollment resource:
   # CREATE

@@ -57,8 +57,9 @@
 
 footer {
   background-color: rgb(142, 142, 142);
-    bottom:0;
-   width:100%;
+  padding-top: 100px;
+     width:100%;
+   margin-top:100px;
 }
 
 .blue {
