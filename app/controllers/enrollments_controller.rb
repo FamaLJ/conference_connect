@@ -1,12 +1,17 @@
 class EnrollmentsController < ApplicationController
     before_action :authenticate_user!
-    
+
   def index
-    @enrollments = Enrollment.all
+    @enrollments = Enrollment.where(:userenroll_id => current_user.id)
+  #  @enrollments = current_user.enrollments
   end
 
   def show
     @enrollment = Enrollment.find(params[:id])
+  end
+
+  def net
+    @enrollment = Enrollment.all
   end
 
   def new

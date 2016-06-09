@@ -46,6 +46,9 @@ Rails.application.routes.draw do
 
     # DELETE
     get "/delete_enrollment/:id", :controller => "enrollments", :action => "destroy"
+
+    #VIEW NET CONNECTIONS
+      get "/net", :controller => "nets", :action => "index"
     #------------------------------
 
   devise_for :users
