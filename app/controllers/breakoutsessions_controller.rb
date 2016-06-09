@@ -2,6 +2,7 @@ class BreakoutsessionsController < ApplicationController
     before_action :authenticate_user!
   def index
     @breakoutsessions = Breakoutsession.all
+    @breakoutsessionsa = Breakoutsession.where(:starts_at => "2016-10-29 02:00:00 UTC")
   end
 
   def agenda
