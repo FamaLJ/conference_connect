@@ -64,7 +64,22 @@
         <th>Actions</th>
       </tr>
 
-      <% @breakoutsessionsa.each do |breakoutsession| %>
+      <% @breakoutsessions1.each do |breakoutsession| %>
+      <tr>
+
+        <td><%= breakoutsession.breakoutname %></td>
+        <td><%= breakoutsession.description %></td>
+        <!-- <td><%= breakoutsession.starts_at %></td> -->
+        <!-- <td><%= breakoutsession.ends_at %></td> -->
+        <!-- <td><%= breakoutsession.speaker %></td> -->
+        <td>
+          <a href="/breakoutsessions/<%= breakoutsession.id %>" class="btn btn-primary">Show</a>
+          <!-- <a href="/breakoutsessions/<%= breakoutsession.id %>/edit" class="btn btn-warning">Edit</a> -->
+          <!-- <a href="/delete_breakoutsession/<%= breakoutsession.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
+        </td>
+        <% end %>
+      </tr>
+      <% @breakoutsessions2.each do |breakoutsession| %>
       <tr>
 
         <td><%= breakoutsession.breakoutname %></td>
@@ -106,8 +121,24 @@
         <th>Actions</th>
       </tr>
 
-      <% @breakoutsessions.each do |breakoutsession| %>
+      <% @breakoutsessions3.each do |breakoutsession| %>
       <tr>
+
+        <td><%= breakoutsession.breakoutname %></td>
+        <td><%= breakoutsession.description %></td>
+        <!-- <td><%= breakoutsession.starts_at %></td> -->
+        <!-- <td><%= breakoutsession.ends_at %></td> -->
+        <!-- <td><%= breakoutsession.speaker %></td> -->
+        <td>
+          <a href="/breakoutsessions/<%= breakoutsession.id %>" class="btn btn-primary">Show</a>
+          <!-- <a href="/breakoutsessions/<%= breakoutsession.id %>/edit" class="btn btn-warning">Edit</a> -->
+          <!-- <a href="/delete_breakoutsession/<%= breakoutsession.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
+        </td>
+        <% end %>
+      </tr>
+      <% @breakoutsessions4.each do |breakoutsession| %>
+      <tr>
+
         <td><%= breakoutsession.breakoutname %></td>
         <td><%= breakoutsession.description %></td>
         <!-- <td><%= breakoutsession.starts_at %></td> -->
@@ -123,6 +154,7 @@
     </table>
   </div>
 </div>
+
 
 <div class="row padding-inside-top-sm">
   <div class="col-md-12">
