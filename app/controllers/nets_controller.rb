@@ -1,10 +1,10 @@
 class NetsController < ApplicationController
   def index
+    @enrollments = Enrollment.all
+    @users = User.all
+    @breakoutsessions = Breakoutsession.all
+    #  @enrollments = current_user.enrollments
     render 'index'
   end
 
-  def index
-    @enrollments = Enrollment.where(:userenroll_id => current_user.id)
-  #  @enrollments = current_user.enrollments
-  end
 end
