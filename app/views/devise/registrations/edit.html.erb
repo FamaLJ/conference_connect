@@ -14,7 +14,12 @@
 
   <div class="form-group">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, :class => "form-control" %>
+    <%= f.text_field :last_name,  autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company %><br />
+    <%= f.text_field :company_name,  autofocus: true %>
   </div>
 
   <div class="form-group">
@@ -27,17 +32,17 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :new_password %> <i>(Enter new password or leave blank if you don't want to change it.)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field form-group">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :confirm_new_password %>(Please re-enter your new password.)<br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(Enter to confirm your changes,)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 

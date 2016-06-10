@@ -9,23 +9,24 @@
   <div class="col-md-12 padding-inside-bottom-lg">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Breakout Name</th>
+        <th>Interested in Content</th>
+        <th>Interested in Industry</th>
+        <th>Looking for Jobs in this field</th>
         <th>Other</th>
-        <th>Industry</th>
-        <th>Job</th>
-        <th>Content</th>
-        <th>Userenroll</th>
-        <th>Breakoutenroll</th>
-        <th>Actions</th>
+          <th>Actions</th>
+
+
       </tr>
 
       <% @enrollments.each do |enrollment| %>
       <tr>
-        <td><%= enrollment.other %></td>
+        <td><%= Breakoutsession.find_by(:id =>enrollment.breakoutenroll_id).breakoutname %></td>
+        <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
-        <td><%= enrollment.content %></td>
-        <td><%= enrollment.userenroll_id %></td>
-        <td><%= enrollment.breakoutenroll_id %></td>
+        <td><%= enrollment.other %></td>
+
         <td>
           <a href="/enrollments/<%= enrollment.id %>" class="btn btn-primary">Show</a>
           <a href="/enrollments/<%= enrollment.id %>/edit" class="btn btn-warning">Edit</a>

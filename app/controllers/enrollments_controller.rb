@@ -8,6 +8,7 @@ class EnrollmentsController < ApplicationController
 
   def show
     @enrollment = Enrollment.find(params[:id])
+    @breakoutsession = Breakoutsession.all
   end
 
   def net

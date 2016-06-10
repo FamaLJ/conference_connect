@@ -1,58 +1,82 @@
 <div class="page-header">
   <h1>
-    Attendees in Your Sessions
+    Registered Attendees By Session
   </h1>
 </div>
 
+<div class="row padding-inside-top-sm padding-inside-bottom-md">
+  <div class="col-md-12">
+    <h4> Breakout Sessions A: Breaking New Ground  </h4>
+  </div>
+</div>
+
+
 <div class="row">
-  <div class="col-md-12 padding-inside-bottom-lg">
+  <div class="col-md-12 padding-inside-bottom-sm ">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Breakout Name</th>
-        <th>User e-mail</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company</th>
+        <th>Subject Matter Interest</th>
+        <th>Industry Interest</th>
+        <th>Job Inquiry</th>
         <th>Other</th>
-        <th>Industry</th>
-        <th>Job</th>
-        <th>Content</th>
+        <th></th>
       </tr>
-      <% @enrollments.each do |enrollment| %>
+      <% @enrollments.where(:breakoutenroll_id => 1).each do |enrollment| %>
       <tr>
-        <td><%= Breakoutsession.find_by(:id =>enrollment.breakoutenroll_id).breakoutname %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).email %></td>
-        <td><%= enrollment.other %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
+        <td><%= enrollment.other %></td>
+        <td>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="row padding-inside-top-sm padding-inside-bottom-md">
+  <div class="col-md-12">
+    <h4> Breakout Sessions A: Structural Integrity  </h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 padding-inside-bottom-sm">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company</th>
+        <th>Subject Matter Interest</th>
+        <th>Industry Interest</th>
+        <th>Job Inquiry</th>
+        <th>Other</th>
+        <th></th>
+      </tr>
+      <% @enrollments.where(:breakoutenroll_id => 2).each do |enrollment| %>
+      <tr>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
         <td><%= enrollment.content %></td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-
-
-
-<div class="row">
-  <div class="col-md-12 padding-inside-bottom-lg">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>User ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Company Name</th>
-        <th>LinkedIn Url</th>
-      </tr>
-      <% @users.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.email %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.company_name %></td>
+        <td><%= enrollment.industry %></td>
+        <td><%= enrollment.job %></td>
+        <td><%= enrollment.other %></td>
         <td>
-          <img src="<%= user.linked_in_url %>"
-        </td>
-        <td>
-          <a href="<%= user.linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
@@ -63,27 +87,39 @@
 
 
 
+
+
+
+<div class="row padding-inside-top-sm padding-inside-bottom-md">
+  <div class="col-md-12">
+    <h4> Breakout Sessions B: Investing in the Next Level  </h4>
+  </div>
+</div>
+
 <div class="row">
-  <div class="col-md-12 padding-inside-bottom-lg">
+  <div class="col-md-12 padding-inside-bottom-sm ">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User ID</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Company Name</th>
-        <th>LinkedIn Url</th>
+        <th>Company</th>
+        <th>Subject Matter Interest</th>
+        <th>Industry Interest</th>
+        <th>Job Inquiry</th>
+        <th>Other</th>
+        <th></th>
       </tr>
-      <% @users.each do |user| %>
+      <% @enrollments.where(:breakoutenroll_id => 3).each do |enrollment| %>
       <tr>
-        <td><%= user.id %></td>
-        <td><%= user.email %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.company_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= enrollment.content %></td>
+        <td><%= enrollment.industry %></td>
+        <td><%= enrollment.job %></td>
+        <td><%= enrollment.other %></td>
         <td>
-          <img src="<%= user.linked_in_url %>"
-        </td>
-        <td>
-          <a href="<%= user.linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
@@ -94,27 +130,38 @@
 
 
 
+
+
+<div class="row padding-inside-top-sm padding-inside-bottom-md">
+  <div class="col-md-12">
+    <h4> Breakout Sessions B: Wireframing and Connectivity  </h4>
+  </div>
+</div>
+
 <div class="row">
-  <div class="col-md-12 padding-inside-bottom-lg">
+  <div class="col-md-12 padding-inside-bottom-sm">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User ID</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Company Name</th>
-        <th>LinkedIn Url</th>
+        <th>Company</th>
+        <th>Subject Matter Interest</th>
+        <th>Industry Interest</th>
+        <th>Job Inquiry</th>
+        <th>Other</th>
+        <th></th>
       </tr>
-      <% @users.each do |user| %>
+      <% @enrollments.where(:breakoutenroll_id => 4).each do |enrollment| %>
       <tr>
-        <td><%= user.id %></td>
-        <td><%= user.email %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.company_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= enrollment.content %></td>
+        <td><%= enrollment.industry %></td>
+        <td><%= enrollment.job %></td>
+        <td><%= enrollment.other %></td>
         <td>
-          <img src="<%= user.linked_in_url %>"
-        </td>
-        <td>
-          <a href="<%= user.linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>

@@ -1,27 +1,28 @@
 <div class="page-header">
-  <h3>Enrollment #<%= @enrollment.id %></h3>
+  <h3>Current Enrollment</h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
+
+
+      <dt>Breakout Session</dt>
+      <dd><%= @breakoutsession.find_by(:id =>@enrollment.breakoutenroll_id).breakoutname %></dd>
+
+      <dt>Content Interest</dt>
+      <dd><%= @enrollment.content %></dd>
+
+      <dt>Industry Interest</dt>
+      <dd><%= @enrollment.industry %></dd>
+
+      <dt>Job Interest</dt>
+      <dd><%= @enrollment.job %></dd>
+
       <dt>Other</dt>
       <dd><%= @enrollment.other %></dd>
 
-      <dt>Industry</dt>
-      <dd><%= @enrollment.industry %></dd>
 
-      <dt>Job</dt>
-      <dd><%= @enrollment.job %></dd>
-
-      <dt>Content</dt>
-      <dd><%= @enrollment.content %></dd>
-
-      <dt>Userenroll</dt>
-      <dd><%= @enrollment.userenroll_id %></dd>
-
-      <dt>Breakoutenroll</dt>
-      <dd><%= @enrollment.breakoutenroll_id %></dd>
 
     </dl>
 
