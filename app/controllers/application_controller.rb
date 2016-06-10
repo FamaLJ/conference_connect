@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :linked_in_url
     devise_parameter_sanitizer.for(:account_update) << :last_name
     devise_parameter_sanitizer.for(:account_update) << :first_name
+end
 
-
-  end
   end
