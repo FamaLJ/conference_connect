@@ -1,6 +1,5 @@
 gem "devise"
 gem "starter_generators", :git => "http://github.com/raghubetina/starter_generators.git"
-gem 'humanize_boolean'
 
 source 'https://rubygems.org'
 

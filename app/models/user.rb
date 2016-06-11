@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
   has_many :enrollments
-  has_many :breakout_sessions, :through => :enrollments , :source => :breakoutenroll
+  has_many :breakout_sessions, :through => :enrollments , :source => :breakoutenroll_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :company_name, :presence => true
