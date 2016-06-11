@@ -24,17 +24,17 @@
         <th>Other</th>
         <th></th>
       </tr>
-      <% @enrollments.where(:breakoutenroll_id => 1).each do |enrollment| %>
+      <% @enrollments1.each do |enrollment| %>
       <tr>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= User.find_by(:id => enrollment.userenroll_id).try(:first_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:last_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:company_name) %></td>
         <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
         <td><%= enrollment.other %></td>
         <td>
-          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).try(:linked_in_url) %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
@@ -66,25 +66,23 @@
         <th>Other</th>
         <th></th>
       </tr>
-      <% @enrollments.where(:breakoutenroll_id => 2).each do |enrollment| %>
+      <% @enrollments2.each do |enrollment| %>
       <tr>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= User.find_by(:id => enrollment.userenroll_id).try(:first_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:last_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:company_name) %></td>
         <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
         <td><%= enrollment.other %></td>
         <td>
-          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).try(:linked_in_url) %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
     </table>
   </div>
 </div>
-
-
 
 
 
@@ -109,17 +107,17 @@
         <th>Other</th>
         <th></th>
       </tr>
-      <% @enrollments.where(:breakoutenroll_id => 3).each do |enrollment| %>
+      <% @enrollments3.each do |enrollment| %>
       <tr>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= User.find_by(:id => enrollment.userenroll_id).try(:first_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:last_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:company_name) %></td>
         <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
         <td><%= enrollment.other %></td>
         <td>
-          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).try(:linked_in_url) %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
@@ -131,8 +129,7 @@
 
 
 
-
-<div class="row padding-inside-top-sm padding-inside-bottom-md">
+<div class="row padding-inside-top-sm padding-inside-bottom-sm">
   <div class="col-md-12">
     <h4> Breakout Sessions B: Wireframing and Connectivity  </h4>
   </div>
@@ -151,17 +148,17 @@
         <th>Other</th>
         <th></th>
       </tr>
-      <% @enrollments.where(:breakoutenroll_id => 4).each do |enrollment| %>
+      <% @enrollments4.each do |enrollment| %>
       <tr>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).first_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).last_name %></td>
-        <td><%= User.find_by(:id =>enrollment.userenroll_id).company_name %></td>
+        <td><%= User.find_by(:id => enrollment.userenroll_id).try(:first_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:last_name) %></td>
+        <td><%= User.find_by(:id =>enrollment.userenroll_id).try(:company_name) %></td>
         <td><%= enrollment.content %></td>
         <td><%= enrollment.industry %></td>
         <td><%= enrollment.job %></td>
         <td><%= enrollment.other %></td>
         <td>
-          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).linked_in_url %>" class="btn btn-primary">View LinkedIn</a>
+          <a href="<%= User.find_by(:id =>enrollment.userenroll_id).try(:linked_in_url) %>" class="btn btn-primary">View LinkedIn</a>
         </td>
       </tr>
       <% end %>
