@@ -6,7 +6,7 @@ class CreateEnrollments < ActiveRecord::Migration
       t.boolean :job
       t.boolean :content
       t.integer :userenroll_id
-      t.integer :breakoutenroll_id
+      t.integer :breakoutenroll
 
       t.timestamps
 

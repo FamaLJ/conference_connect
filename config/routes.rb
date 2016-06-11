@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  root "home#index"
+
+  # VIEW AGENDA
+  get "/publicagendas", :controller => "publicagendas", :action => "index"
+  get "/publicagendas", :controller => "publicagendas", :action => "show"
+
+
+  # VIEW HOME PAGE
+  get "/home", :controller => "home", :action => "index"
+  get "/home", :controller => "home", :action => "show"
+
+  #----------
 
   # Routes for the Breakoutsession resource:
   # CREATE
@@ -16,24 +28,28 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_breakoutsession/:id", :controller => "breakoutsessions", :action => "destroy"
+
   #------------------------------
 
-  # Routes for the Enrollment resource:
-  # CREATE
-  get "/enrollments/new", :controller => "enrollments", :action => "new"
-  post "/create_enrollment", :controller => "enrollments", :action => "create"
+    # Routes for the Enrollment resource:
+    # CREATE
+    get "/enrollments/new", :controller => "enrollments", :action => "new"
+    post "/create_enrollment", :controller => "enrollments", :action => "create"
 
-  # READ
-  get "/enrollments", :controller => "enrollments", :action => "index"
-  get "/enrollments/:id", :controller => "enrollments", :action => "show"
+    # READ
+    get "/enrollments", :controller => "enrollments", :action => "index"
+    get "/enrollments/:id", :controller => "enrollments", :action => "show"
 
-  # UPDATE
-  get "/enrollments/:id/edit", :controller => "enrollments", :action => "edit"
-  post "/update_enrollment/:id", :controller => "enrollments", :action => "update"
+    # UPDATE
+    get "/enrollments/:id/edit", :controller => "enrollments", :action => "edit"
+    post "/update_enrollment/:id", :controller => "enrollments", :action => "update"
 
-  # DELETE
-  get "/delete_enrollment/:id", :controller => "enrollments", :action => "destroy"
-  #------------------------------
+    # DELETE
+    get "/delete_enrollment/:id", :controller => "enrollments", :action => "destroy"
+
+    #VIEW NET CONNECTIONS
+      get "/net", :controller => "nets", :action => "index"
+    #------------------------------
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

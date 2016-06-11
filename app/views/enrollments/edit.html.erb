@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Enrollment #<%= @enrollment.id %></h3>
+  <h3>Edit Enrollment </h3>
 </div>
 
 <div class="row">
@@ -17,6 +17,42 @@
     <form action="/update_enrollment/<%= @enrollment.id %>" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+
+      <!-- Label and input for breakoutenroll_id -->
+      <div class="form-group">
+        <label for="breakoutenroll_id" placeholder="Breakoutenroll" class="control-label">
+          Update Breakout Session
+        </label>
+
+        <%= select_tag(:breakoutenroll_id, options_from_collection_for_select(Breakoutsession.all, :id, :breakoutname, @enrollment.breakoutenroll_id), :class =>"form-control") %>
+      </div>
+      
+
+
+      <!-- Label and input for content -->
+      <div class="checkbox">
+        <label for="content">
+          <input type="checkbox" id="content" name="content" value="1" <%= "checked" if @enrollment.content %>>
+          Interested in Content
+        </label>
+      </div>
+
+      <!-- Label and input for industry -->
+      <div class="checkbox">
+        <label for="industry">
+          <input type="checkbox" id="industry" name="industry" value="1" <%= "checked" if @enrollment.industry %>>
+          Interested in Industry
+        </label>
+      </div>
+
+      <!-- Label and input for job -->
+      <div class="checkbox">
+        <label for="job">
+          <input type="checkbox" id="job" name="job" value="1" <%= "checked" if @enrollment.job %>>
+          Looking for Jobs in this field
+        </label>
+      </div>
 
       <!-- Label and input for other -->
       <div class="checkbox">
@@ -26,47 +62,16 @@
         </label>
       </div>
 
-      <!-- Label and input for industry -->
-      <div class="checkbox">
-        <label for="industry">
-          <input type="checkbox" id="industry" name="industry" value="1" <%= "checked" if @enrollment.industry %>>
-          Industry
-        </label>
-      </div>
-
-      <!-- Label and input for job -->
-      <div class="checkbox">
-        <label for="job">
-          <input type="checkbox" id="job" name="job" value="1" <%= "checked" if @enrollment.job %>>
-          Job
-        </label>
-      </div>
-
-      <!-- Label and input for content -->
-      <div class="checkbox">
-        <label for="content">
-          <input type="checkbox" id="content" name="content" value="1" <%= "checked" if @enrollment.content %>>
-          Content
-        </label>
-      </div>
-
       <!-- Label and input for userenroll_id -->
       <div class="form-group">
         <label for="userenroll_id" class="control-label">
-          Userenroll
         </label>
 
-        <input type="text" id="userenroll_id" name="userenroll_id" placeholder="Userenroll" class="form-control" value="<%= @enrollment.userenroll_id %>">
+        <input type="hidden" id="userenroll_id" name="userenroll_id" placeholder="Userenroll" class="form-control" value="<%= @enrollment.userenroll_id %>">
       </div>
 
-      <!-- Label and input for breakoutenroll_id -->
-      <div class="form-group">
-        <label for="breakoutenroll_id" class="control-label">
-          Breakoutenroll
-        </label>
 
-        <input type="text" id="breakoutenroll_id" name="breakoutenroll_id" placeholder="Breakoutenroll" class="form-control" value="<%= @enrollment.breakoutenroll_id %>">
-      </div>
+
 
       <button class="btn btn-warning">
         Update Enrollment

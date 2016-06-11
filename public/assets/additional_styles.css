@@ -12,7 +12,39 @@
   background-size: cover;
   color: grey;
   height: 500px;
-  padding-top: 150px;
+  padding-top: 10px;
+}
+
+.sponsor {
+  font-size: 50px;
+  text-align: center;
+  /* background-color: rgb(238, 238, 238); */
+  color: grey;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.align-text-right {
+  text-align: right;
+}
+
+.sponsort {
+  font-size: 20px;
+  text-align: center;
+  /* background-color: rgb(238, 238, 238); */
+  color: grey;
+  height: 60px;
+  padding-top: 20px;
+}
+
+.img-circle-big {
+  height: 300px;
+}
+
+.about {
+  font-size: 20px;
+  text-align: center;
+  color: black;
 }
 
 .sound-bites, .why-order {
@@ -28,11 +60,14 @@
 }
 
 footer {
-  background-color: rgb(50, 50, 170);
+  background-color: rgb(142, 142, 142);
+  padding-top: 100px;
+     width:100%;
+   margin-top:100px;
 }
 
-.blue {
-  background-color: rgb(50, 50, 170);
+.bigp {
+  font-size: 20px;
 }
 
 /* Miscellaneous */
@@ -85,6 +120,10 @@ footer li {
   padding-top: 200px;
 }
 
+.padding-inside-top-super {
+  padding-top: 300px;
+}
+
 .padding-inside-bottom-xs {
   padding-bottom: 10px;
 }
@@ -119,6 +158,14 @@ footer li {
 
 .margin-above-top-lg {
   margin-top: 150px;
+}
+
+.margin-above-top-xl {
+  margin-top: 200px;
+}
+
+.margin-above-top-super {
+  margin-top: 300px;
 }
 
 .margin-below-bottom-xs {

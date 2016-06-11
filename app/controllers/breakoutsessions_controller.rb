@@ -1,6 +1,15 @@
 class BreakoutsessionsController < ApplicationController
+    before_action :authenticate_user!
   def index
     @breakoutsessions = Breakoutsession.all
+    @breakoutsessions1 = Breakoutsession.where(:id => 1)
+    @breakoutsessions2 = Breakoutsession.where(:id => 2)
+    @breakoutsessions3 = Breakoutsession.where(:id => 3)
+    @breakoutsessions4 = Breakoutsession.where(:id => 4)
+  end
+
+  def agenda
+    @breakoutsession = Breakoutsession.find(params[:id])
   end
 
   def show

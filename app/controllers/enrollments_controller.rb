@@ -1,10 +1,18 @@
 class EnrollmentsController < ApplicationController
+    before_action :authenticate_user!
+
   def index
-    @enrollments = Enrollment.all
+    @enrollments = Enrollment.where(:userenroll_id => current_user.id)
+  #  @enrollments = current_user.enrollments
   end
 
   def show
     @enrollment = Enrollment.find(params[:id])
+    @breakoutsession = Breakoutsession.all
+  end
+
+  def net
+    @enrollment = Enrollment.all
   end
 
   def new
@@ -55,4 +63,9 @@ class EnrollmentsController < ApplicationController
 
     redirect_to "/enrollments", :notice => "Enrollment deleted."
   end
+
+  def read_only_text_field(object_name, method, options = {})
+            text_field(object_name, method, :disabled => true)
+      end
+
 end

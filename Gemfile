@@ -1,6 +1,5 @@
-gem 'devise'
+gem "devise"
 gem "starter_generators", :git => "http://github.com/raghubetina/starter_generators.git"
-
 
 source 'https://rubygems.org'
 
